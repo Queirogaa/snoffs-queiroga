@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queiroga</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Custom font - Roboto Mono */
+        body {
+            font-family: 'Outfit', monospace; /* Alterado para Roboto Mono */
+            background-color: #0e0e0e; /* Cor de fundo principal escura */
+        }
+
+        /* Estilo para o banner de fundo */
+        .banner-bg {
+            background-image: url('banner.png'); /* Placeholder image */
+            background-size: cover;
+            background-position: bottom;
+            height: 380px; /* Altura do banner ajustada */
+        }
+
+        /* Estilo para sobreposição escura no banner para melhor contraste do texto */
+        .banner-overlay {
+            background-color: rgba(0, 0, 0, 0); /* Sobreposição escura */
+        }
+
+        /* Estilo para a foto de perfil */
+        .profile-pic-display {
+            border: 0px solid #1E1E1E; /* Borda da foto de perfil contra o fundo do card de info */
+        }
+
+        /* Estilo para os ícones sociais */
+        .social-icon {
+            transition: transform 0.2s ease-in-out;
+        }
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* Estilo para os cards de categoria */
+        .category-card {
+            background-color: #1A1A1A; /* Cor de fundo dos cards */
+            border-radius: 0px; /* Bordas arredondadas */
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            /* Padding revertido para p-4 md:p-5 */
+        }
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .category-icon-bg {
+            background-color: #1a1a1a; /* Fundo do ícone da categoria */
+            width: 48px;
+            height: 48px;
+        }
+
+        /* Linha separadora */
+        .separator-line {
+            height: 1px;
+            background-color: #ffffff; /* Cor da linha */
+            margin-top: 2rem; /* Espaçamento acima da linha */
+            margin-bottom: 2rem; /* Espaçamento abaixo da linha */
+        }
+
+        /* Estilo para o container do vídeo */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Proporção 16:9 para o vídeo */
+            height: 0;
+            overflow: hidden;
+            background-color: #000; /* Fundo preto caso o vídeo demore a carregar */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0; /* Remove a borda do iframe */
+        }
+
+        /* Novo container para informações do perfil */
+        .profile-info-card {
+            background-color: #1E1E1E; /* Mesmo fundo das categorias */
+            border-radius: 0px; /* Bordas arredondadas */
+        }
+
+    </style>
+    <!-- Script para carregar a fonte Roboto Mono do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400&display=swap" rel="stylesheet">
+</head>
+<body class="text-white">
+
+    <!-- Seção do Banner e Perfil -->
+    <header class="banner-bg relative">
+        <div class="banner-overlay absolute inset-0"></div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container mx-auto px-4 pb-12">
+        
+        <!-- Novo Container para Foto de Perfil, Informações e Redes Sociais -->
+        <!-- Largura aumentada para max-w-4xl -->
+        <div class="profile-info-card max-w-5xl mx-auto text-center relative p-8 md:p-10"
+             style="margin-top: -150px;"> 
+            
+            <!-- Foto de Perfil -->
+            <!-- Tamanho da foto de perfil aumentado -->
+            <div class="mb-4" style="margin-top: -95px;"> 
+                <img src="perfil.jpg" 
+                     alt="Foto de Perfil" 
+                     class="profile-pic-display w-36 h-36 md:w-48 md:h-48 rounded-full object-cover shadow-lg mx-auto">
+            </div>
+
+            <!-- Informações do Perfil -->
+            <section class="pt-3"> 
+                <h1 class="text-2xl md:text-3xl font-bold">Queiroga <i class="fas fa-check-circle text-blue-500 text-lg"></i></h1>
+                <p class="text-gray-400 text-xs md:text-sm mt-1">eduardo.queiroga@live.com</p>
+            </section>
+
+            <!-- Ícones de Redes Sociais Atualizados -->
+            <section class="flex justify-center items-center space-x-4 md:space-x-5 mt-6 flex-wrap">
+                <!-- Discord -->
+                <a href="https://discord.com/users/314521006243053568" target="_blank" rel="noopener noreferrer" class="social-icon text-gray-300 hover:text-white text-xl md:text-2xl">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/queiroga011" target="_blank" rel="noopener noreferrer" class="social-icon text-gray-300 hover:text-white text-xl md:text-2xl">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/queiroga011" target="_blank" rel="noopener noreferrer" class="social-icon text-gray-300 hover:text-white text-xl md:text-2xl">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <!-- Twitch -->
+                <a href="https://www.twitch.tv/queiroga011" target="_blank" rel="noopener noreferrer" class="social-icon text-gray-300 hover:text-white text-xl md:text-2xl">
+                    <i class="fab fa-twitch"></i>
+                </a>
+                <!-- X (Twitter) -->
+                <a href="https://x.com/queiroga011" target="_blank" rel="noopener noreferrer" class="social-icon text-gray-300 hover:text-white text-xl md:text-2xl">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@queiroga011" target="_blank" rel="noopener noreferrer" class="social-icon text-gray-300 hover:text-white text-xl md:text-2xl">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </section>
+        </div>
+
+        <!-- Seção de Categorias (Links) -->
+        <!-- Largura aumentada para max-w-4xl -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mt-8 max-w-5xl mx-auto">
+            <!-- Categoria 1: Máscara -->
+            <a href="https://www.behance.net/queiroga" target="_blank" rel="noopener noreferrer" class="category-card p-3 md:p-4 flex items-center space-x-4 group">
+                <div class="category-icon-bg rounded-lg flex items-center justify-center">
+                    <img src="https://placehold.co/48x48/FF6347/FFFFFF?text=M" alt="Ícone Máscara" class="w-12 h-12">
+                </div>
+                <div>
+                    <h3 class="font-semibold text-base md:text-lg text-white">Behance</h3>
+                    <p class="text-gray-400 text-xs md:text-sm">Veja meu portfólio de design</p>
+                </div>
+                <i class="fas fa-chevron-right text-gray-500 ml-auto group-hover:text-white transition-colors"></i>
+            </a>
+
+            <!-- Categoria 2: Grupo Roblox -->
+            <a href="https://ytjobs.co/talent/profile/323096" target="_blank" rel="noopener noreferrer" class="category-card p-3 md:p-4 flex items-center space-x-4 group">
+                <div class="category-icon-bg rounded-lg flex items-center justify-center">
+                     <img src="https://placehold.co/48x48/4682B4/FFFFFF?text=R" alt="Ícone Grupo Roblox" class="w-12 h-12">
+                </div>
+                <div>
+                    <h3 class="font-semibold text-base md:text-lg text-white">YT Jobs</h3>
+                    <p class="text-gray-400 text-xs md:text-sm">Veja meu portfólio de vídeos</p>
+                </div>
+                <i class="fas fa-chevron-right text-gray-500 ml-auto group-hover:text-white transition-colors"></i>
+            </a>
+
+            <!-- Categoria 3: Canal de Games -->
+            <a href="#" target="_blank" rel="noopener noreferrer" class="category-card p-3 md:p-4 flex items-center space-x-4 group">
+                <div class="category-icon-bg rounded-lg flex items-center justify-center">
+                    <img src="https://placehold.co/48x48/32CD32/FFFFFF?text=G" alt="Ícone Canal de Games" class="w-12 h-12">
+                </div>
+                <div>
+                    <h3 class="font-semibold text-base md:text-lg text-white">Canal de Games</h3>
+                    <p class="text-gray-400 text-xs md:text-sm">Conteúdo exclusivo</p>
+                </div>
+                <i class="fas fa-chevron-right text-gray-500 ml-auto group-hover:text-white transition-colors"></i>
+            </a>
+
+            <!-- Categoria 4: Produtos dos Vídeos -->
+            <a href="#" target="_blank" rel="noopener noreferrer" class="category-card p-3 md:p-4 flex items-center space-x-4 group">
+                <div class="category-icon-bg rounded-lg flex items-center justify-center">
+                     <img src="https://placehold.co/48x48/FFD700/000000?text=P" alt="Ícone Produtos" class="w-12 h-12">
+                </div>
+                <div>
+                    <h3 class="font-semibold text-base md:text-lg text-white">Lista de desejos</h3>
+                    <p class="text-gray-400 text-xs md:text-sm">Apenas minha wishlist</p>
+                </div>
+                <i class="fas fa-chevron-right text-gray-500 ml-auto group-hover:text-white transition-colors"></i>
+            </a>
+        </section>
+
+        <!-- Linha Separadora -->
+        <!-- Largura aumentada para max-w-4xl -->
+        <div class="separator-line max-w-4xl mx-auto"></div>
+
+        <!-- Seção do Vídeo Embedado -->
+        <!-- Largura aumentada para max-w-4xl -->
+        <section class="mt-8 max-w-4xl mx-auto">
+            <h2 class="text-xl md:text-2xl font-semibold mb-3 text-left"></h2>
+            <div class="video-container shadow-xl">
+                <iframe 
+                    src="https://www.youtube.com/embed/ow3c_8_MidQ" 
+                    title="Player de vídeo do YouTube" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center p-6 mt-12 border-t border-gray-700">
+        <p class="text-gray-500 text-sm">© <span id="currentYear"></span> Queiroga. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
